@@ -1,32 +1,34 @@
-import { Schema, model } from "mongoose"
+import { Schema, model } from "mongoose";
 
-const maintenanceSchema = new Schema ({
-    workshop: {
-        type: Schema.Types.ObjectId,
-        ref: "Workshop",
+const maintenanceSchema = new Schema({
+  workshop: {
+    type: Schema.Types.ObjectId,
+    ref: "Workshop",
+    required: true,
+  },
+  vehicle: {
+    type: Schema.Types.ObjectId,
+    ref: "Vehicle",
+    required: true,
+  },
+  services: [
+    {
+      name: {
+        type: Schema.Types.String,
         required: true,
-    },
-    vehicle: {
-        type: Schema.Types.ObjectId,
-        ref: "Vehicle",
+      },
+      price: {
+        type: Schema.Types.Number,
         required: true,
+      },
     },
-    services: [{
-        name: {
-            type: Schema.Types.String,
-            required: true,
-        },
-        price: {
-            type: Schema.Types.Number,
-            required: true
-        },
-    }],
-    date: {
-        type: Schema.Types.Date,
-        required: true,
-    },
-})
+  ],
+  date: {
+    type: Schema.Types.Date,
+    required: true,
+  },
+});
 
-const Maintenance = model("Maintenance", maintenanceSchema)
+const Maintenance = model("Maintenance", maintenanceSchema);
 
-export default Maintenance
+export default Maintenance;
