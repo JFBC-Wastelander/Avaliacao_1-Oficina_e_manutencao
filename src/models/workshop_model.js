@@ -14,11 +14,11 @@ export const workshopSchema = new Schema ({
         enum: ["MOTOR", "FREIOS", "SUSPENSÃO", "ESTÉTICA"],
         required: true,
     },
-    maintenance: {
+    maintenance: [{
         type: Schema.Types.ObjectId,
         ref: "Maintenance",
         required: true,
-    }
+    }]
 })
 
 const Workshop = model("Workshop", workshopSchema)

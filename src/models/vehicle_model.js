@@ -20,11 +20,11 @@ export const vehicleSchema = new Schema ({
         type: Schema.Types.String,
         required: true,
     },
-    maintenance: {
+    maintenance: [{
         type: Schema.Types.ObjectId,
         ref: "Maintenance",
         required: true,
-    }
+    }]
 })
 
 const Vehicle = model("Vehicle", vehicleSchema)
