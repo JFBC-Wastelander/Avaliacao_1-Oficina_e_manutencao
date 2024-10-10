@@ -1,12 +1,6 @@
 import { Schema, model } from "mongoose"
 
-const totalCost = () => {
-    for (let i = 0; i < services.price; i++) {
-        return i
-    }
-}
-
-export const maintenanceSchema = new Schema ({
+const maintenanceSchema = new Schema ({
     workshop: {
         type: Schema.Types.ObjectId,
         ref: "Workshop",
@@ -26,15 +20,13 @@ export const maintenanceSchema = new Schema ({
             type: Schema.Types.Number,
             required: true
         },
-        required: true,
     }],
     date: {
         type: Schema.Types.Date,
         required: true,
     },
-    totalCost: {
-        totalCost
-    }
 })
 
 const Maintenance = model("Maintenance", maintenanceSchema)
+
+export default Maintenance

@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose"
 
-export const workshopSchema = new Schema ({
+const workshopSchema = new Schema ({
     name: {
         type: Schema.Types.String,
         required: true,
@@ -17,8 +17,10 @@ export const workshopSchema = new Schema ({
     maintenance: [{
         type: Schema.Types.ObjectId,
         ref: "Maintenance",
-        required: true,
+        required: false,
     }]
 })
 
 const Workshop = model("Workshop", workshopSchema)
+
+export default Workshop

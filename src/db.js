@@ -7,4 +7,4 @@ import mongoose from "mongoose";
     } catch (err) {
         console.log(err)
     }
-})
+})()

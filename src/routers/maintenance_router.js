@@ -6,7 +6,7 @@ import {
     show,
     update,
     destroy
-} from "../controllers/vehicle_controller.js"
+} from "../controllers/maintenance_controller.js"
 
 const router = Router()
 

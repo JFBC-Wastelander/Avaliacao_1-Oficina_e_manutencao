@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose"
 
-export const vehicleSchema = new Schema ({
+const vehicleSchema = new Schema ({
     plate: {
         type: Schema.Types.String,
         required: true,
@@ -23,8 +23,10 @@ export const vehicleSchema = new Schema ({
     maintenance: [{
         type: Schema.Types.ObjectId,
         ref: "Maintenance",
-        required: true,
+        required: false,
     }]
 })
 
 const Vehicle = model("Vehicle", vehicleSchema)
+
+export default Vehicle

@@ -1,4 +1,4 @@
-import { Maintenance } from "../models/maintenance_model.js";
+import Maintenance from "../models/maintenance_model.js";
 
 export const store = async (req, res) => {
     try {
